@@ -17,6 +17,7 @@
                 FashionablyLate</a>
         </div>
         <h1>FashionablyLate</h1>
+        @yield('button')
     </header>
     <main>
         @yield('content')
