@@ -26,14 +26,17 @@
             <div class="contact__form--item">
                 <span class="contact__form--label">性別</span>
                 <span class="contact__form--required">*</span>
-                <input type="radio" name="gender" value="1"{{ old('gender') == '1' ? 'checked' : ''}}>
-                <label class="contact__form--label">男性</label>
-
-                <input type="radio" name="gender" value="2"{{ old('gender') == '2' ? 'checked' : ''}}>
-                <label class="contact__form--label">女性</label>
-
-                <input type="radio" name="gender" value="3"{{ old('gender') == '3' ? 'checked' : ' '}}>
-                <label class="contact__form--label">その他</label>
+                <div class="contact__form--radio-group">
+                    <input type="radio" name="gender" value="1"{{ old('gender') == '1' ? 'checked' : ''}}>
+                    <label class="contact__form--label">男性</label>
+                </div>
+                <div class="contact__form--radio--group">
+                    <input type="radio" name="gender" value="2"{{ old('gender') == '2' ? 'checked' : ''}}><label class="contact__form--label">女性</label>
+                </div>
+                <Div class="contact__form--radio--group">
+                    <input type="radio" name="gender" value="3"{{ old('gender') == '3' ? 'checked' : ' '}}>
+                    <label class="contact__form--label">その他</label>
+                </Div>
 
             </div>
             <!--メールアドレス-->

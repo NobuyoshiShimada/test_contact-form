@@ -4,12 +4,12 @@
 
 ## 環境構築
 
-__Dockerビルド__
+**Dockerビルド**
 
 - git clone git@github.com:NobuyoshiShimada/test_contact-form.git
 - docker-compose up -d --build
 
-__Laravel環境構築__
+**Laravel環境構築**
 
 - composer install
 - composer create-project "laravel/laravel=8.\*" . --prefer-dist
@@ -20,11 +20,11 @@ __Laravel環境構築__
 
 ## 使用技術
 
+- macOS Swquoia 15.6
 - PHP: 8.1.34
 - Laravel: 8.83.29
 - MySQL 8.0.26
 - nginx 1.21.1
-- j
 
 ## 開発環境
 
@@ -34,6 +34,4 @@ __Laravel環境構築__
 
 ## ER図
 
-![](test_contact-form.dio)
-
-
+![](test_contact-form.png)
