@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 @section('button')
-    <div class="header__button">
-        <a href="/login" class="header__button--login">login</a>
-    </div>
+    <a href="/login" class="header__button--login">login</a>
 @endsection
 
 @section('content')

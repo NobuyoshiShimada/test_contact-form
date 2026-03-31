@@ -10,7 +10,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -63,6 +62,8 @@
         }
 
         .modal__item {
+            display: flex;
+            justify-content: space-between
             margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 1px solid #eee;
@@ -74,16 +75,14 @@
 
         .modal__label {
             font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
+            align-items: center
+
             color: #333;
         }
 
         .modal__value {
             margin: 0;
             padding: 8px 12px;
-            background-color: #f9f9f9;
-            border-radius: 4px;
             color: #555;
             min-height: 30px;
         }
@@ -99,10 +98,9 @@
             color: white;
             border: none;
             padding: 10px 30px;
-            border-radius: 4px;
+            border-radius: 1px;
             cursor: pointer;
             font-size: 16px;
-            font-weight: bold;
         }
 
         .modal__delete:hover {
@@ -112,9 +110,9 @@
 @endsection
 
 @section('button')
-    <div class="header__button">
-        <a href="/logout" class="header__button--logout">logout</a>
-    </div>
+    <form class="header__button">
+        <button type="submit" href="/logout" class="header__button--logout">logout</button>
+    </form>
 @endsection
 
 @section('content')
@@ -140,14 +138,16 @@
                 <button type="button" class="admin__form--button" onclick="location.href='/admin'">リセット</button>
             </form>
             <!-- エクスポート機能 -->
-            <div class="admin__form--export">
-                <button name="export" value="1" class="admin__form--button">エクスポート</button>
-            </div>
-
-            <div class="admin__content--result">
-                <div class="admin__pagination">
-                    {{ $contacts->links() }}
+            <div class="admin__form--export--pagination">
+                <div class="admin__form--export">
+                    <button name="export" value="1" class="admin__form--button">エクスポート</button>
                 </div>
+                <div class="admin__content--result">
+                    <div class="admin__pagination">
+                        {{ $contacts->links() }}
+                    </div>
+                </div>
+            </div>
                 <table class="admin__content--result__table">
                     <thead>
                         <tr>
@@ -155,6 +155,7 @@
                             <th>性別</th>
                             <th>メールアドレス</th>
                             <th>お問い合わせの種類</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -172,7 +173,7 @@
                                 </td>
                                 <td>{{ $contact->email }}</td>
                                 <td>{{ $contact->category->name }}</td>
-                                <td>
+                                <td class="admin__content--modal__button">
                                     <button type="button" class="admin__content--modal__link" onclick="openModal({{ json_encode($contact) }})">詳細</button>
                                 </td>
                             </tr>

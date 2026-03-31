@@ -1,0 +1,101 @@
+.confirm {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.confirm__title {
+    font-size: 24px;
+    font-family: 'fashionablylate', serif;
+    color: #b59d8e;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.confirm__form {
+    width: 100%;
+}
+
+.confirm__table {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 0;
+}
+
+.confirm__table--inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.confirm__row {
+    display: table-row;
+}
+
+.confirm__row:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.confirm__header {
+    display: table-cell;
+    width: 30%;
+    background-color: #a89f95;
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: normal;
+    border: none;
+    white-space: nowrap;
+}
+
+.confirm__value {
+    display: table-cell;
+    width: 70%;
+    background-color: #fafafa;
+    padding: 15px 20px;
+    font-size: 13px;
+    color: #666;
+    border: none;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.confirm__value input {
+    display: none;
+}
+
+.confirm__footer {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.confirm__button--submit {
+    background-color: #8b7969;
+    color: white;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirm__button--submit:hover {
+    background-color: #6d5d51;
+}
+
+.confirm__button--edit {
+    background-color: transparent;
+    color: #666;
+    padding: 12px 50px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s;
+}

@@ -12,7 +12,7 @@
             <div class="contact__form--group">
                 <div class="contact__form--title">
                     <span for="name" class="contact__form--label">お名前</span>
-                    <span class="contact__form--required">*</span>
+                    <span class="contact__form--required">※</span>
                 </div>
                 <div class="contact__form--item">
                     <input type="text" name="last_name" placeholder="例：山田" value="{{ old('last_name') }}" required >
@@ -28,34 +28,34 @@
             <!--性別-->
             <div class="contact__form--group">
                 <div class="contact__form--title">
-                    <span class="contact__form--label">性別</span>
-                    <span class="contact__form--required">*</span>
+                    <span class="contact__form--label">性別<span class="contact__form--required">※</span></span>
                 </div>
                 <div class="contact__form--item">
-                    <div class="contact__form--radio-group">
-                        <input type="radio" name="gender" value="1"{{ old('gender') == '1' ? 'checked' : ''}}>
-                        <label class="contact__form--label">男性</label>
-                    </div>
-                    <div class="contact__form--radio--group">
-                        <input type="radio" name="gender" value="2"{{ old('gender') == '2' ? 'checked' : ''}}>
-                        <labelclass="contact__form--label">女性</label>
-                    </div>
-                    <div class="contact__form--radio--group">
-                        <input type="radio" name="gender" value="3"{{ old('gender') == '3' ? 'checked' : ' '}}>
-                        <label class="contact__form--label">その他</label>
+                    <div>
+                        <div class="contact__form--radio-group">
+                            <input type="radio" name="gender" value="1" id="gender1" {{ old('gender') == '1' ? 'checked' : ''}}>
+                            <label for="gender1">男性</label>
+                        </div>
+                        <div class="contact__form--radio--group">
+                            <input type="radio" name="gender" value="2" id="gender2" {{ old('gender') == '2' ? 'checked' : ''}}>
+                            <label for="gender2">女性</label>
+                        </div>
+                        <div class="contact__form--radio--group">
+                            <input type="radio" name="gender" value="3" id="gender3" {{ old('gender') == '3' ? 'checked' : ' '}}>
+                            <label for="gender3">その他</label>
+                        </div>
                     </div>
                 </div>
                 <div class="form__error">
-                        @error('name')
-                            {{ $message }}
-                        @enderror
+                    @error('gender')
+                    {{ $message }}
+                    @enderror
                 </div>
             </div>
             <!--メールアドレス-->
             <div class="contact__form--group">
-                <div class="copntact__form--title">
-                    <span class="contact__form--label">メールアドレス</span>
-                    <span class="contact__form--required">*</span>
+                <div class="contact__form--title">
+                    <span class="contact__form--label">メールアドレス<span class="contact__form--required">※</span></span>
                 </div>
                 <div class="contact__form--item">
                     <input type="email" name="email" placeholder="例：test@example.com" value="{{ old('email') }}" required>
@@ -69,15 +69,16 @@
             <!--電話番号-->
             <div class="contact__form--group">
                  <div class="contact__form--title">
-                    <span class="contact__form--label">電話番号</span>
-                    <span class="contact__form--required">*</span>
+                    <span class="contact__form--label">電話番号<span class="contact__form--required">※</span></span>
                 </div>
                 <div class="contact__form--item">
-                    <input type="string" name="tel_1" placeholder="080" value="{{ old('tel_1') }}" required >
-                    <a class="tel_separator">-</a>
-                    <input type="string" name="tel_2" placeholder="1234" value="{{ old('tel_2') }}" required >
-                    <a class="tel_separator">-</a>
-                    <input type="string" name="tel_3" placeholder="5678" value="{{ old('tel_3') }}" required >
+                    <div style="display: flex; align-items: center;">
+                        <input type="string" name="tel_1" placeholder="080" value="{{ old('tel_1') }}" required>
+                        <span class="tel_separator">-</span>
+                        <input type="string" name="tel_2" placeholder="1234" value="{{ old('tel_2') }}" required>
+                        <span class="tel_separator">-</span>
+                        <input type="string" name="tel_3" placeholder="5678" value="{{ old('tel_3') }}" required>
+                    </div>
                 </div>
                 <div class="form__error">
                     @error('tel')
@@ -88,8 +89,7 @@
             <!--住所-->
             <div class="contact__form--group">
                 <div class="contact__form--title">
-                    <span for="address" class="contact__form--label">住所</span>
-                    <span class="contact__form--required">*</span>
+                    <span class="contact__form--label">住所<span class="contact__form--required">※</span></span>
                 </div>
                 <div class="contact__form--item">
                     <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" required>
@@ -103,7 +103,7 @@
             <!--建物名-->
             <div class="contact__form--group">
                 <div class="contact__form--title">
-                    <span for="building" class="contact__form--label">建物名</span>
+                    <span class="contact__form--label">建物名</span>
                 </div>
                 <div class="contact__form--item">
                     <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{ old('building') }}">
@@ -112,8 +112,7 @@
             <!--お問い合わせの種類-->
             <div class="contact__form--group">
                 <div class="contact__form--title">
-                    <span for="category" class="contact__form--label">お問い合わせの種類</span>
-                    <span class="contact__form--required">*</span>
+                    <span class="contact__form--label">お問い合わせの種類<span class="contact__form--required">※</span></span>
                 </div>
                 <div class="contact__form--item">
                     <select name="category_id" class="contact__form--select">
@@ -123,24 +122,27 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="form__error">
+                    @error('category_id')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
             <!--お問い合わせ内容-->
             <div class="contact__form--group">
                 <div class="contact__form--title">
-                    <span for="message" class="contact__form--label">お問い合わせ内容</span>
-                    <span class="contact__form--required">*</span>
+                    <span class="contact__form--label">お問い合わせ内容<span class="contact__form--required">※</span></span>
                 </div>
                 <div class="contact__form--item">
-                    <textarea name="detail" class="contact__form--textarea" placeholder="お問い合わせ内容をご記載ください" >{{ old('detail') }}</textarea>
+                    <textarea name="detail" class="contact__form--textarea" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                 </div>
                 <div class="form__error">
                     @error('detail')
                     {{ $message }}
                     @enderror
-                        <!--バリデーションを実装したら記述-->
                 </div>
             </div>
-            <button type="submit" class="contact__form--button">Submit</button>
+            <button type="submit" class="contact__form--button">確認画面</button>
         </form>
     </div>
 @endsection
