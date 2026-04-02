@@ -16,7 +16,6 @@
             <a class="header__logo">
                 FashionablyLate</a>
         </div>
-        <h1>FashionablyLate</h1>
         @yield('button')
     </header>
     <main>

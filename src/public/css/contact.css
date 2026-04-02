@@ -1,0 +1,136 @@
+.contact {
+    width: 100%;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.contact__title {
+    font-size: 24px;
+    font-family: 'fashionablylate', serif;
+    color: #8b7969;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact__form {
+    width: 100%;
+    margin: 0px auto;
+    text-align: left;
+}
+
+.contact__form--group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.contact__form--title {
+    width: 120px;
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+
+.contact__form--label {
+    font-size: 14px;
+    color: #333;
+}
+
+.contact__form--required {
+    color: red;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.contact__form--item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 名前(last_name, first_name)を横並びに */
+.contact__form--item input[name="last_name"],
+.contact__form--item input[name="first_name"] {
+    width: calc(50% - 10px);
+    display: inline-block;
+}
+
+/* その他のinput, textarea, selectは全幅 */
+.contact__form--item input[type="email"],
+.contact__form--item input[type="string"][name*="tel"],
+.contact__form--item input[name="address"],
+.contact__form--item textarea,
+.contact__form--item select {
+    width: 100%;
+    display: block;
+}
+
+.contact__form--item input,
+.contact__form--item textarea,
+.contact__form--item select {
+    padding: 10px;
+    background: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contact__form--item input[type="text"],
+.contact__form--item input[type="email"] {
+    width: 100%;
+}
+
+.contact__form--item textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact__form--item select {
+    width: 100%;
+}
+
+.contact__form--radio-group,
+.contact__form--radio--group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact__form--radio-group input,
+.contact__form--radio--group input {
+    margin-right: 5px;
+}
+
+.tel_separator {
+    margin: 0 5px;
+}
+
+.contact__form--button {
+    background-color: #8b7969;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact__form--button:hover {
+    background-color: #6d5d51;
+}
+
+.form__error {
+    height: auto;
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    min-height: 20px;
+}

@@ -41,9 +41,19 @@ class AdminController extends Controller
             $query->whereDate('created_at', $request->input('search_date'));
         }
 
-        $contacts = $query->get();
+        // 7件ごとにページネーション
+        $contacts = $query->paginate(7);
         $categories = Category::all();
 
         return view('admin', compact('contacts', 'categories'));
+    }
+
+    public function destroy($id)
+    {
+        $contact = Contact::find($id);
+        if ($contact) {
+            $contact->delete();
+        }
+        return redirect('/admin')->with('message', 'お問い合わせを削除しました');
     }
 }

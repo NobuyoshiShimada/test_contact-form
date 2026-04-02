@@ -21,4 +21,5 @@ Route::post('/contact/confirm', [ContactController::class, 'confirm']);
 Route::get('/contact/confirm', function (){return redirect('/');});
 Route::post('/contact', [ContactController::class, 'store']);
 Route::get('/admin', [AdminController::class, 'index']);
+Route::delete('/admin/{id}', [AdminController::class, 'destroy']);
 
