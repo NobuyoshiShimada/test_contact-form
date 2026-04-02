@@ -1,41 +1,35 @@
 .thanks {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #ffffff;
-    padding: 40px 20px;
-    text-align: center;
 }
 
 
-.thanks__title {
-    position: relative;
+.thanks__base {
+    font-family: 'fashionablylate', serif;
     margin-bottom: 0.2rem;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 180px;
     text-align: center;
-    color: #8b7969;
+    color: #f9f8f8;
+    position: relative;
 }
 
-.thanks__title::before {
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #f9f8f8;
-    font-size: 90px;
-    text-transform: uppercase;
-    content: 'thank you';
-    z-index: -1;
+.thanks__overlay {
+    color: #8b7969;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .thanks__form {
+    tposition: relative;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-top: 30px;
+    z-index: 1;
 }
 
 .thanks__button {

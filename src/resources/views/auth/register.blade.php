@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 @section('button')
-    <a href="/login" class="header__button--login">login</a>
+    <a href="/login" class="header__button">login</a>
 @endsection
 
 @section('content')
@@ -43,18 +43,7 @@
                         @enderror
                 </div>
             </div>
-
-            <div class="register__form--item">
-                <span class="register__form--label">パスワード確認
-                </span>
-                <input type="password" name="password_confirmation" placeholder="例：coachtech1106" >
-                <div class="form__error">
-                        @error('password_confirmation')
-                            {{ $message }}
-                        @enderror
-                </div>
-            </div>
-
+            
             <div class="register__button">
                 <button class="register__button--sending" type="submit">登録</button>
             </div>

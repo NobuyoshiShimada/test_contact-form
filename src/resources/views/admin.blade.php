@@ -63,7 +63,7 @@
 
         .modal__item {
             display: flex;
-            justify-content: space-between
+            justify-content: space-between;
             margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 1px solid #eee;
@@ -75,7 +75,7 @@
 
         .modal__label {
             font-weight: bold;
-            align-items: center
+            align-items: center;
 
             color: #333;
         }
@@ -110,8 +110,9 @@
 @endsection
 
 @section('button')
-    <form class="header__button">
-        <button type="submit" href="/logout" class="header__button--logout">logout</button>
+    <form class="header__button" method="post" action="{{ route('logout')}}">
+        @csrf
+        <button type="submit" href="/login" class="header__button--logout">logout</button>
     </form>
 @endsection
 

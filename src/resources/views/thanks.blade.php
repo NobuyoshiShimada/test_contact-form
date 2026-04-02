@@ -11,8 +11,9 @@
 <body>
     <main>
         <div class="thanks">
-                <h2 class="thanks__title">お問い合わせありがとうございました
-                </h2>
+                <p class="thanks__base">Thank you
+                </p>
+                <p class="thanks__overlay">お問い合わせありがとうございました</p>
                 <form action="/" method="get" class="thanks__form">
                     <button type="submit" class="thanks__button">HOME</button>
                 </form>

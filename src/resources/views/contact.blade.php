@@ -21,7 +21,7 @@
                 </div>
                 <div class="form__error">
                         @error('name')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                 </div>
             </div>
@@ -81,7 +81,13 @@
                     </div>
                 </div>
                 <div class="form__error">
-                    @error('tel')
+                    @error('tel_1')
+                    {{ $message }}
+                    @enderror
+                    @error('tel_2')
+                    {{ $message }}
+                    @enderror
+                    @error('tel_3')
                     {{ $message }}
                     @enderror
                 </div>
